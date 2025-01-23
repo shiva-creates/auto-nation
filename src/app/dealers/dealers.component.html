@@ -1,0 +1,122 @@
+<div class="main-container">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav me-auto mb-2 mb-lg-0">
+    
+            </div>
+        <div class="menu-item-contsiner">
+            <div class="menu-item">Services</div>
+            <div class="menu-item">About us</div>
+            <div class="menu-item">Contact</div>
+        </div>
+          </div>
+        </div>
+      </nav>
+    
+    <section class="dealer-container">
+        <h1>Dealership</h1>
+    
+        <div class="table-container">
+            <div class="option-container">
+                <input type="text" placeholder="search" class="search-inp">
+                <div class="btn-cotainer">
+                    <button type="button" class="add-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Dealers</button>
+                </div>
+            </div>
+            <div class="table_component" role="region" tabindex="0">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sno.</th>
+                            <th>Name</th>
+                            <th>Amount Of Cars</th>
+                            <th>Total Budget</th>
+                            <th>Remining Budget</th>
+                            <th></th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      @for (dealer of dealerDataList; track $index) {
+                        <tr>
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ dealer.dealerName }}</td>
+                          <td>{{ dealer.cars }}</td>
+                          <td>${{ dealer.totalBudget }}</td>
+                          <td>{{ dealer.remainingBudget }}</td>
+                          <td><button type="button" class="view-btn">View</button></td>
+                          <td><button type="button" class="edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onEdit(dealer)">Edit</button></td>
+                          <td><button type="button" class="delete-btn" (click)="onDelete(dealer.id)">Delete</button></td>
+                      </tr>
+                      }
+      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    
+    </section>
+    
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Dealer</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="add-dealer-form-container">
+              <form [formGroup]="dealerFrom">
+                  <div class="mb-3">
+                    <label for="dealerName" class="form-label">Dealer's Name</label>
+                    <input type="text"  formControlName="dealerName" class="form-control" id="dealerName" aria-describedby="dealerName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="latitude" class="form-label">Latitude</label>
+                    <input type="text" formControlName="latitude" class="form-control" id="latitude">
+                  </div>
+                  <div class="mb-3">
+                    <label for="longitude" class="form-label">longitude</label>
+                    <input type="text" formControlName="longitude" class="form-control" id="longitude">
+                  </div>
+      
+                  <div class="mb-3">
+                      <label for="totalBudget" class="form-label">Total Budget</label>
+                      <input type="text" formControlName="totalBudget" class="form-control" id="totalBudget">
+                    </div>
+                  <div class="mb-3">
+                      <label for="owerFirstName" class="form-label">Owener's First Name</label>
+                      <input type="text" formControlName="owerFirstName" class="form-control" id="owerFirstName">
+                    </div>
+                  <div class="mb-3">
+                      <label for="owerLastName" class="form-label">Owener's Last Name</label>
+                      <input type="text" formControlName="owerLastName" class="form-control" id="owerLastName">
+                    </div>
+      
+    
+                </form>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            @if(dealerFrom.controls['id'].value == null){
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSave()">Save</button>
+            }@else{
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onUpdate()">Update</button>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    
