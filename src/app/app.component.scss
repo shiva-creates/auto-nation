@@ -1,0 +1,130 @@
+.main-container{
+
+}
+
+.navbar-container{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.logo-contianer{
+    font-weight: 700;
+    margin: 0.5rem 2rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.menu-item-contsiner{
+    display: flex;
+}
+
+.menu-item{
+    padding: 1rem 3rem;
+}
+
+.dealer-container{
+    padding: 2rem 10%;
+}
+
+.table-container{
+    background-color: white;
+    height: calc(100vh - 15rem);
+    border-radius: 10px;
+}
+
+.option-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.add-btn{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 1rem;
+}
+
+.search-inp{
+    padding: 0.2rem 0.5rem; 
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.table_component {
+    overflow: auto;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.table_component table {
+    // border: 1px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+
+.table_component th {
+    // border: 1px solid #dededf;
+    background-color: #f1f7fa;
+    color: #000000;
+    padding: 5px;
+    font-weight: 400;
+    padding: 1rem 0;
+
+}
+
+
+
+tbody tr {
+    border: 1px solid lightgray;
+
+}
+.table_component td {
+    // border: 1px solid #dededf;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+
+.view-btn{
+    padding: 0.2rem 1.5rem;
+    border-radius: 5px;
+    background-color: #eef8fe;
+    border: 1px solid #1c5375;
+    // border: none;
+    color:  #1c5375;
+}  
+.edit-btn{
+    padding: 0.2rem 1.5rem;
+    border-radius: 5px;
+    background-color: #ccfcf0;
+    border: 1px solid #24756b;
+    // border: none;
+    color: #24756b;
+}  
+.delete-btn{
+    padding: 0.2rem 1.5rem;
+    border-radius: 5px;
+    background-color: #feecd6;
+    border: 1px solid #a5471e;
+    // border: none;
+    color: #a5471e;
+}  
+
