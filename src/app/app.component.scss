@@ -33,8 +33,7 @@
 
 .table-container{
     background-color: white;
-    height: calc(100vh - 15rem);
-    border-radius: 10px;
+
 }
 
 .option-container{
@@ -62,12 +61,14 @@
 .table_component {
     overflow: auto;
     width: 100%;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    height: calc(100vh - 15rem);
+    border-radius: 10px;
+    overflow-y: auto;
 }
 
 .table_component table {
     // border: 1px solid #dededf;
-    height: 100%;
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
@@ -76,9 +77,6 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
-
-
 
 .table_component th {
     // border: 1px solid #dededf;

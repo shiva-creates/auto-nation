@@ -1,11 +1,14 @@
 export interface Dealer {
     id : string,
-    name : string,
-    totalBudget : number
-    remainingBudget : number
-    owner : string,
-    location : Location,
-    cars : Cars[];
+    dealerName : string,
+    totalBudget : number,
+    remainingBudget? : number
+    owerFirstName : string,
+    owerLastName : string,
+    location? : Location,
+    latitude : number,
+    longitude : number,
+    cars? : Cars[];
 }
 
 
